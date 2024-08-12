@@ -1,0 +1,43 @@
+{
+    "title": "Gestión de Clases",
+    "theme_toggle": "Alternar Tema",
+    "tabs": {
+      "calendario": "Calendario",
+      "cadastro": "Registro",
+      "turmas": "Clases",
+      "relatorios": "Informes"
+    },
+    "calendar": {
+      "title": "Calendario",
+      "semanal": "Semanal",
+      "mensal": "Mensual"
+    },
+    "register_class": "Registrar Nueva Clase",
+    "form": {
+      "name": "Nombre de la Clase",
+      "type": "Tipo de Clase",
+      "start_date": "Fecha de Inicio",
+      "day_of_week": "Día de la Semana",
+      "start_time": "Hora de Inicio",
+      "end_time": "Hora de Finalización",
+      "add_class": "Añadir Clase"
+    },
+    "classes": "Clases Registradas",
+    "download_classes": "Descargar Clases",
+    "upload_classes": "Subir Clases",
+    "generate_report": "Generar Informe",
+    "report": {
+      "start_date": "Fecha de Inicio",
+      "end_date": "Fecha de Fin",
+      "hour_value_course": "Valor de la Hora - Curso ($)",
+      "hour_value_super_module": "Valor de la Hora - Super Módulo ($)",
+      "hour_value_super_reinforcement": "Valor de la Hora - Super Refuerzo ($)",
+      "generate_report": "Generar Informe",
+      "result": "Resultado del Informe",
+      "classes_number": "Número de Clases",
+      "total_hours": "Total de Horas",
+      "total_value": "Valor Total: $"
+    },
+    "edit_class": "Editar Clase",
+    "save_changes": "Guardar Cambios"
+  }

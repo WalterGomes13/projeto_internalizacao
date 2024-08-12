@@ -1,0 +1,78 @@
+.calendar-grid {
+  display: grid;
+  gap: var(--spacing-small);
+}
+
+#calendario-semanal {
+  grid-template-columns: repeat(7, 1fr);
+}
+
+#calendario-mensal {
+  grid-template-columns: repeat(7, 1fr);
+}
+
+.calendar-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: var(--spacing-medium);
+  grid-column: 1 / -1;
+}
+
+.calendar-header button {
+  background: none;
+  border: none;
+  font-size: var(--font-size-large);
+  cursor: pointer;
+  color: var(--color-text);
+}
+
+.calendar-days {
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  gap: var(--spacing-small);
+}
+
+.calendar-day-header {
+  font-weight: bold;
+  text-align: center;
+  padding: var(--spacing-small);
+  background-color: var(--color-primary);
+  color: #ffffff;
+  border-radius: var(--border-radius);
+}
+
+.calendar-day-cell {
+  border: 1px solid var(--color-border);
+  padding: var(--spacing-small);
+  min-height: 80px;
+  position: relative;
+  background-color: var(--color-card-bg);
+}
+
+.calendar-day-number {
+  position: absolute;
+  top: 5px;
+  left: 5px;
+  font-size: var(--font-size-small);
+  font-weight: bold;
+}
+
+.calendar-event {
+  padding: var(--spacing-small);
+  margin-bottom: var(--spacing-small);
+  border-radius: var(--border-radius);
+  font-size: var(--font-size-small);
+}
+
+@media (max-width: 768px) {
+  #calendario-semanal, #calendario-mensal {
+      grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+@media (max-width: 480px) {
+  #calendario-semanal, #calendario-mensal {
+      grid-template-columns: repeat(2, 1fr);
+  }
+}

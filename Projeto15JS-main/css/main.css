@@ -1,0 +1,54 @@
+/* Base styles */
+@import 'base.css';
+@import 'theme.css';
+@import 'layout.css';
+
+/* Component styles */
+@import 'components/buttons.css';
+@import 'components/cards.css';
+@import 'components/forms.css';
+@import 'components/header.css';
+@import 'components/tabs.css';
+@import 'components/calendar.css';
+
+/* Utility classes */
+@import 'utilities.css';
+
+/* Any additional global styles can be added here */
+body {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+main {
+    flex: 1;
+}
+
+footer {
+    margin-top: auto;
+    padding: var(--spacing-medium);
+    background-color: var(--color-card-bg);
+    border-top: 1px solid var(--color-border);
+    text-align: center;
+}
+
+#botoes{
+    display: flex;
+    flex-direction: row;
+    gap: 5px;
+    margin-bottom: 5px;
+}
+
+#botao{
+    width: 30px;
+    height: 30px;
+    overflow: hidden;
+    border-radius: 50%;
+}
+
+.mudarIdioma{
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+}

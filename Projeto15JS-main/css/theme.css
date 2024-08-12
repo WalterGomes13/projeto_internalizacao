@@ -1,0 +1,45 @@
+:root {
+  --color-primary: #007bff;
+  --color-primary-dark: #0056b3;
+  --color-text: #333333;
+  --color-bg: #ffffff;
+  --color-card-bg: #f8f9fa;
+  --color-border: #dee2e6;
+  --color-event-bg: #e9ecef;
+}
+
+.dark {
+  --color-primary: #4dabf7;
+  --color-primary-dark: #339af0;
+  --color-text: #f8f9fa;
+  --color-bg: #343a40;
+  --color-card-bg: #495057;
+  --color-border: #6c757d;
+  --color-event-bg: #495057;
+}
+
+body {
+  background-color: var(--color-bg);
+  color: var(--color-text);
+}
+
+.card {
+  background-color: var(--color-card-bg);
+  border: 1px solid var(--color-border);
+}
+
+.calendar-event {
+  background-color: var(--color-event-bg);
+}
+
+.Curso {
+  background-color: rgba(0, 123, 255, 0.2);
+}
+
+.SuperMódulo {
+  background-color: rgba(40, 167, 69, 0.2);
+}
+
+.SuperReforço {
+  background-color: rgba(255, 193, 7, 0.2);
+}

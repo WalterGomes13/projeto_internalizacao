@@ -1,0 +1,56 @@
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: var(--spacing-large);
+}
+
+h1 {
+  font-size: var(--font-size-xlarge);
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+  gap: var(--spacing-medium);
+}
+
+.hidden {
+  display: none;
+}
+
+#resultado-relatorio {
+  margin-top: var(--spacing-large);
+  padding: var(--spacing-medium);
+  background-color: var(--color-event-bg);
+  border-radius: var(--border-radius);
+}
+
+#resultado-relatorio h3 {
+  margin-top: 0;
+  margin-bottom: var(--spacing-small);
+}
+
+@media (max-width: 768px) {
+  .tabs {
+      flex-direction: column;
+  }
+  
+  .tab-button {
+      width: 100%;
+  }
+  
+  .card {
+      padding: var(--spacing-medium);
+  }
+
+  #calendario-semanal, #calendario-mensal {
+      grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+@media (max-width: 480px) {
+  #calendario-semanal, #calendario-mensal {
+      grid-template-columns: repeat(2, 1fr);
+  }
+}

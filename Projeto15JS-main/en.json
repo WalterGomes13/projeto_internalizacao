@@ -1,0 +1,44 @@
+{
+    "title": "Class Management",
+    "theme_toggle": "Toggle Theme",
+    "tabs": {
+      "calendario": "Calendar",
+      "cadastro": "Registration",
+      "turmas": "Classes",
+      "relatorios": "Reports"
+    },
+    "calendar": {
+      "title": "Calendar",
+      "semanal": "Weekly",
+      "mensal": "Monthly"
+    },
+    "register_class": "Register New Class",
+    "form": {
+      "name": "Class Name",
+      "type": "Class Type",
+      "start_date": "Start Date",
+      "day_of_week": "Day of Week",
+      "start_time": "Start Time",
+      "end_time": "End Time",
+      "add_class": "Add Class"
+    },
+    "classes": "Registered Classes",
+    "download_classes": "Download Classes",
+    "upload_classes": "Upload Classes",
+    "file_input_placeholder": "Choose a file",
+    "generate_report": "Generate Report",
+    "report": {
+      "start_date": "Start Date",
+      "end_date": "End Date",
+      "hour_value_course": "Hourly Rate - Course (USD)",
+      "hour_value_super_module": "Hourly Rate - Super Module (USD)",
+      "hour_value_super_reinforcement": "Hourly Rate - Super Reinforcement (USD)",
+      "generate_report": "Generate Report",
+      "result": "Report Results",
+      "classes_number": "Number of Classes: ",
+      "total_hours": "Total Hours: ",
+      "total_value": "Total Value: $"
+    },
+    "edit_class": "Edit Class",
+    "save_changes": "Save Changes"
+  }

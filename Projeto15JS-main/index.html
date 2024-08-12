@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title data-i18n="title">Controle de Turmas</title>
+    <link rel="stylesheet" href="css/main.css">
+    <script src="https://unpkg.com/lucide@latest"></script>
+</head>
+<body>
+    <div class="container">
+        <div id="botoes">
+            <div id="botao"><img src="/bandeiras/bandeira_eua.avif" alt="" id="mudarIdiomaEn" class="mudarIdioma"></div>
+            <div id="botao"><img src="/bandeiras/bandeira-da-espanha.webp" alt="" id="mudarIdiomaEs" class="mudarIdioma"></div>
+            <div id="botao"><img src="/bandeiras/2-bandeira-do-brasil.webp" alt="" id="mudarIdiomaPt" class="mudarIdioma"></div>
+        </div>
+        <header>
+            <h1 data-i18n="title">Controle de Turmas</h1>
+            <button id="theme-toggle" aria-label="Alternar tema" data-i18n="theme_toggle">
+                <i data-lucide="sun" class="icon-light"></i>
+                <i data-lucide="moon" class="icon-dark"></i>
+            </button>
+        </header>
+        <nav class="tabs">
+            <button class="tab-button active" data-tab="calendario" data-i18n="tabs.calendario">Calendário</button>
+            <button class="tab-button" data-tab="cadastro" data-i18n="tabs.cadastro">Cadastro</button>
+            <button class="tab-button" data-tab="turmas" data-i18n="tabs.turmas">Turmas</button>
+            <button class="tab-button" data-tab="relatorios" data-i18n="tabs.relatorios">Relatórios</button>
+        </nav>
+        <div id="calendario" class="tab-content active">
+            <div class="card">
+                <div class="card-header">
+                    <h2 class="card-title" data-i18n="calendar.title">Calendário</h2>
+                    <div class="calendar-toggle">
+                        <button id="btn-semanal" class="calendar-toggle-btn active" data-i18n="calendar.semanal">Semanal</button>
+                        <button id="btn-mensal" class="calendar-toggle-btn" data-i18n="calendar.mensal">Mensal</button>
+                    </div>
+                </div>
+                <div class="card-content">
+                    <div id="calendario-semanal" class="calendar-grid"></div>
+                    <div id="calendario-mensal" class="calendar-grid hidden">
+                        <div class="calendar-header">
+                            <button id="prev-month">&lt;</button>
+                            <h3 id="current-month"></h3>
+                            <button id="next-month">&gt;</button>
+                        </div>
+                        <div class="calendar-days"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div id="cadastro" class="tab-content">
+            <div class="card">
+                <div class="card-header">
+                    <h2 class="card-title" data-i18n="register_class">Cadastrar Nova Turma</h2>
+                </div>
+                <div class="card-content">
+                    <form id="form-cadastro">
+                        <div class="form-group">
+                            <label for="nome" data-i18n="form.name">Nome da Turma</label>
+                            <input type="text" id="nome" name="nome" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="tipo" data-i18n="form.type">Tipo de Turma</label>
+                            <select id="tipo" name="tipo" required>
+                                <option value="" >Selecione o tipo</option>
+                                <option value="Curso" >Curso</option>
+                                <option value="Super Módulo" >Super Módulo</option>
+                                <option value="Super Reforço" >Super Reforço</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label for="dataInicio" data-i18n="form.start_date">Data de Início</label>
+                            <input type="date" id="dataInicio" name="dataInicio" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="diaSemana" data-i18n="form.day_of_week">Dia da Semana</label>
+                            <select id="diaSemana" name="diaSemana" required>
+                                <option value="">Selecione o dia</option>
+                                <option value="Segunda" >Segunda</option>
+                                <option value="Terça" >Terça</option>
+                                <option value="Quarta" >Quarta</option>
+                                <option value="Quinta" >Quinta</option>
+                                <option value="Sexta" >Sexta</option>
+                                <option value="Sábado" >Sábado</option>
+                                <option value="Domingo" >Domingo</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label for="horarioInicio" data-i18n="form.start_time">Horário de Início</label>
+                            <input type="time" id="horarioInicio" name="horarioInicio" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="horarioFim" data-i18n="form.end_time">Horário de Término</label>
+                            <input type="time" id="horarioFim" name="horarioFim" required>
+                        </div>
+                        <button type="submit" data-i18n="form.add_class">Adicionar Turma</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+        <div id="turmas" class="tab-content">
+            <div class="card">
+                <div class="card-header">
+                    <h2 class="card-title" data-i18n="classes">Turmas Cadastradas</h2>
+                </div>
+                <div class="card-content">
+                    <button id="btn-download" data-i18n="download_classes">Download Turmas</button>
+                    <button id="btn-upload" data-i18n="upload_classes">Upload Turmas</button>
+                    <input type="file" id="file-input" accept=".json">
+                    <div id="lista-turmas" class="grid"></div>
+                </div>
+            </div>
+        </div>
+        <div id="relatorios" class="tab-content">
+            <div class="card">
+                <div class="card-header">
+                    <h2 class="card-title" data-i18n="generate_report">Gerar Relatório</h2>
+                </div>
+                <div class="card-content">
+                    <form id="form-relatorio">
+                        <div class="form-group">
+                            <label for="dataInicioRelatorio" data-i18n="report.start_date">Data de Início</label>
+                            <input type="date" id="dataInicioRelatorio" name="dataInicio" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="dataFimRelatorio" data-i18n="report.end_date">Data de Fim</label>
+                            <input type="date" id="dataFimRelatorio" name="dataFim" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="valorHoraCurso" data-i18n="report.hour_value_course">Valor da Hora-Aula - Curso (R$)</label>
+                            <input type="number" id="valorHoraCurso" name="valorHoraCurso" step="0.01" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="valorHoraSuperModulo" data-i18n="report.hour_value_super_module">Valor da Hora-Aula - Super Módulo (R$)</label>
+                            <input type="number" id="valorHoraSuperModulo" name="valorHoraSuperModulo" step="0.01" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="valorHoraSuperReforco" data-i18n="report.hour_value_super_reinforcement">Valor da Hora-Aula - Super Reforço (R$)</label>
+                            <input type="number" id="valorHoraSuperReforco" name="valorHoraSuperReforco" step="0.01" required>
+                        </div>
+                        <button type="submit" data-i18n="report.generate_report">Gerar Relatório</button>
+                    </form>
+                    <div id="resultado-relatorio" class="hidden">
+                        <h3 data-i18n="report.result">Resultado do Relatório</h3>
+                        <p data-i18n="report.classes_number">Número de Turmas: <span id="numero-turmas"></span></p>
+                        <p data-i18n="report.total_hours">Total de Horas: <span id="total-horas"></span></p>
+                        <p data-i18n="report.total_value">Valor Total: R$ <span id="valor-total"></span></p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div id="modal-editar" class="modal hidden">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <h2 data-i18n="edit_class">Editar Turma</h2>
+            <form id="form-editar">
+                <input type="hidden" id="editar-id">
+                <div class="form-group">
+                    <label for="editar-nome" data-i18n="form.name">Nome da Turma</label>
+                    <input type="text" id="editar-nome" name="nome" required>
+                </div>
+                <div class="form-group">
+                    <label for="editar-tipo" data-i18n="form.type">Tipo de Turma</label>
+                    <select id="editar-tipo" name="tipo" required>
+                        <option value="" data-i18n="text.type">Selecione o tipo</option>
+                        <option value="Curso" data-i18n="text.curso">Curso</option>
+                        <option value="Super Módulo" data-i18n="text.modulo">Super Módulo</option>
+                        <option value="Super Reforço" data-i18n="text.reforco">Super Reforço</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="editar-dataInicio" data-i18n="form.start_date">Data de Início</label>
+                    <input type="date" id="editar-dataInicio" name="dataInicio" required>
+                </div>
+                <div class="form-group">
+                    <label for="editar-diaSemana" data-i18n="form.day_of_week">Dia da Semana</label>
+                    <select id="editar-diaSemana" name="diaSemana" required>
+                        <option value="">Selecione o dia</option>
+                        <option value="Segunda" data-i18n="dia.Seg">Segunda</option>
+                        <option value="Terça" data-i18n="dia.Ter">Terça</option>
+                        <option value="Quarta" data-i18n="dia.Qua">Quarta</option>
+                        <option value="Quinta" data-i18n="dia.Qui">Quinta</option>
+                        <option value="Sexta" data-i18n="dia.Sex">Sexta</option>
+                        <option value="Sábado" data-i18n="dia.Sab">Sábado</option>
+                        <option value="Domingo" data-i18n="dia.Dom">Domingo</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="editar-horarioInicio" data-i18n="form.start_time">Horário de Início</label>
+                    <input type="time" id="editar-horarioInicio" name="horarioInicio" required>
+                </div>
+                <div class="form-group">
+                    <label for="editar-horarioFim" data-i18n="form.end_time">Horário de Término</label>
+                    <input type="time" id="editar-horarioFim" name="horarioFim" required>
+                </div>
+                <button type="submit" data-i18n="save_changes">Salvar Alterações</button>
+            </form>
+        </div>
+    </div>
+
+    <script type="module" src="js/main.js"></script>
+</body>
+</html>

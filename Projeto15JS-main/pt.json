@@ -1,0 +1,44 @@
+{
+    "title": "Controle de Turmas",
+    "theme_toggle": "Alternar Tema",
+    "tabs": {
+        "calendario": "Calendário",
+        "cadastro": "Cadastro",
+        "turmas": "Turmas",
+        "relatorios": "Relatórios"
+    },
+    "calendar": {
+        "title": "Calendário",
+        "semanal": "Semanal",
+        "mensal": "Mensal"
+    },
+    "register_class": "Cadastrar Nova Turma",
+    "form": {
+        "name": "Nome da Turma",
+        "type": "Tipo de Turma",
+        "start_date": "Data de Início",
+        "day_of_week": "Dia da Semana",
+        "start_time": "Horário de Início",
+        "end_time": "Horário de Término",
+        "add_class": "Adicionar Turma"
+    },
+    "classes": "Turmas Cadastradas",
+    "download_classes": "Download Turmas",
+    "upload_classes": "Upload Turmas",
+    "file_input_placeholder": "Escolha um arquivo",
+    "generate_report": "Gerar Relatório",
+    "report": {
+        "start_date": "Data de Início",
+        "end_date": "Data de Fim",
+        "hour_value_course": "Valor da Hora-Aula - Curso (R$)",
+        "hour_value_super_module": "Valor da Hora-Aula - Super Módulo (R$)",
+        "hour_value_super_reinforcement": "Valor da Hora-Aula - Super Reforço (R$)",
+        "generate_report": "Gerar Relatório",
+        "result": "Resultado do Relatório",
+        "classes_number": "Número de Turmas: ",
+        "total_hours": "Total de Horas: ",
+        "total_value": "Valor Total: R$"
+    },
+    "edit_class": "Editar Turma",
+    "save_changes": "Salvar Alterações"
+}
