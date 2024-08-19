@@ -1,18 +1,19 @@
 // calendar.js
+import { idioma } from './main.js';
 import { $, $$ } from './utils.js';
 
-export function initCalendar(turmas, currentDate, DIAS_SEMANA) {
+export function initCalendar(turmas, currentDate, DIAS_SEMANA,idioma) {
     atualizarCalendarioSemanal(turmas, DIAS_SEMANA);
-    atualizarCalendarioMensal(turmas, currentDate, DIAS_SEMANA);
+    atualizarCalendarioMensal(turmas, currentDate, DIAS_SEMANA,idioma);
 
     $('#prev-month').addEventListener('click', () => {
         currentDate.setMonth(currentDate.getMonth() - 1);
-        atualizarCalendarioMensal(turmas, currentDate, DIAS_SEMANA);
+        atualizarCalendarioMensal(turmas, currentDate, DIAS_SEMANA,idioma);
     });
     
     $('#next-month').addEventListener('click', () => {
         currentDate.setMonth(currentDate.getMonth() + 1);
-        atualizarCalendarioMensal(turmas, currentDate, DIAS_SEMANA);
+        atualizarCalendarioMensal(turmas, currentDate, DIAS_SEMANA,idioma);
     });
 }
 
@@ -38,15 +39,16 @@ function atualizarCalendarioSemanal(turmas, DIAS_SEMANA) {
     });
 }
 
-function atualizarCalendarioMensal(turmas, currentDate, DIAS_SEMANA) {
-    const calendarHeader = $('.calendar-header');
+function atualizarCalendarioMensal(turmas, currentDate, DIAS_SEMANA,idioma) {
     const calendarDays = $('.calendar-days');
-    
+    const calendarHeader = $('.calendar-header');
+
     calendarHeader.innerHTML = `
         <button id="prev-month">&lt;</button>
-        <h3 id="current-month">${currentDate.toLocaleString('default', { month: 'long', year: 'numeric' })}</h3>
+        <h3 id="current-month">${currentDate.toLocaleString(idioma, { month: 'long', year: 'numeric' })}</h3>
         <button id="next-month">&gt;</button>
     `;
+
     
     calendarDays.innerHTML = '';
     
@@ -91,7 +93,9 @@ function atualizarCalendarioMensal(turmas, currentDate, DIAS_SEMANA) {
         
         calendarDays.appendChild(dayCell);
     }
+
 }
+
 
 export function abrirFormularioNovaTurma(data, DIAS_SEMANA) {
     const diaSemana = DIAS_SEMANA[data.getDay()];
